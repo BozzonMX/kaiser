@@ -1,0 +1,66 @@
+{
+  "name": "kaiser",
+  "version": "1.0.0",
+  "private": true,
+  "dependencies": {
+    "@amcharts/amcharts5": "^5.4.8",
+    "@ant-design/icons": "5.2.5",
+    "@fortawesome/fontawesome-svg-core": "6.4.2",
+    "@fortawesome/free-brands-svg-icons": "6.4.2",
+    "@fortawesome/free-regular-svg-icons": "6.4.2",
+    "@fortawesome/free-solid-svg-icons": "6.4.2",
+    "@fortawesome/react-fontawesome": "0.2.0",
+    "antd": "5.8.5",
+    "axios": "1.6.2",
+    "dayjs": "1.11.9",
+    "http-proxy-middleware": "2.0.6",
+    "react": "18.2.0",
+    "react-dom": "18.2.0",
+    "react-helmet": "^6.1.0",
+    "react-router-dom": "6.15.0"
+  },
+  "devDependencies": {
+    "@babel/plugin-proposal-private-property-in-object": "7.21.11",
+    "ajv": "^8.11.0",
+    "cross-env": "^7.0.3",
+    "eslint": "^8.34.0",
+    "eslint-config-react-app": "^7.0.1",
+    "eslint-plugin-flowtype": "^8.0.3",
+    "eslint-plugin-import": "^2.27.5",
+    "eslint-plugin-jsx-a11y": "^6.7.1",
+    "eslint-plugin-react": "^7.32.2",
+    "react-scripts": "^5.0.1",
+    "rimraf": "^4.1.2"
+  },
+  "overrides": {
+    "autoprefixer": "10.4.5"
+  },
+  "resolutions": {
+    "css-what": "^5.0.1",
+    "nth-check": "^3.0.1"
+  },
+  "scripts": {
+    "start": "rimraf ./build && react-scripts start",
+    "build": "react-scripts build",
+    "test": "cross-env CI=true react-scripts test --env=jsdom",
+    "eject": "react-scripts eject",
+    "lint": "eslint ./src/"
+  },
+  "eslintConfig": {
+    "extends": [
+      "react-app"
+    ]
+  },
+  "browserslist": {
+    "production": [
+      ">0.2%",
+      "not dead",
+      "not op_mini all"
+    ],
+    "development": [
+      "last 1 chrome version",
+      "last 1 firefox version",
+      "last 1 safari version"
+    ]
+  }
+}

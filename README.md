@@ -1,4 +1,4 @@
-# KAISER A WEB APPLICATION FOR ALGORITHMS VISUALIZATION AND EXERCISES OF COMPUTER ENGINEERING
+# KAISER A WEB APPLICATION FOR ALGORITHM VISUALIZATION AND EXERCISES OF COMPUTER ENGINEERING
 
 This project it's open-source, feel free to fork it, edit it and distribute it.
 
@@ -8,7 +8,7 @@ This project it's open-source, feel free to fork it, edit it and distribute it.
 
 ## Arch information
 
-**Back-end:** Net Core 6.0 LTS.
+**Back-end:** Net Core 6.0.
 
 **Front-end:** ReactJS 18.
 
