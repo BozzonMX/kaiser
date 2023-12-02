@@ -220,15 +220,12 @@ body,
     display: block;
     max-height: 0;
     overflow: hidden;
-    transition: background-color 0.2s;
-    -ms-flex-direction: column;
-    flex-direction: column;
     padding: 0;
-    transition: max-height 500ms ease-in-out;
+    transition: max-height .35s ease-in-out;
 }
 
 .side-nav-toggle.open~.side-nav-menu {
-    max-height: 750px;
+    max-height: 450px;
 }
 
 .side-nav div {
