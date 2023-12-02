@@ -1,12 +1,9 @@
 import React, { Component } from "react";
-import CustomLayout from "../../utility/layout";
 
 class Home extends Component {
 
     render() {
-        return (<CustomLayout>
-            <h1>Home</h1>
-        </CustomLayout>);
+        return (<h1 className="page-title">Inicio</h1>);
     };
 };
 

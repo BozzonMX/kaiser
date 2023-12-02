@@ -1,11 +1,12 @@
 import React from "react";
-import { createBrowserRouter } from "react-router-dom";
+import { Outlet, createBrowserRouter } from "react-router-dom";
 // PAGES
 import Home from "../_container/system/home";
 import ProcessPlanner from "../_container/system/processPlanner";
 // UTILITY
 import ErrorBoundary from "../_container/utility/errorBoundary";
 import Error404 from "../_container/utility/error404";
+import CustomLayout from "../_container/utility/layout";
 
 const router = createBrowserRouter([
     // NOT AUTORIZED & 404
@@ -13,18 +14,19 @@ const router = createBrowserRouter([
         path: "*",
         element: <Error404 />,
     },
-    {
-        path: "/Error404",
-        element: <Error404 />,
-    },
     // PAGES
     {
-        path: "/",
-        element: <ErrorBoundary><Home /></ErrorBoundary>,
-    },
-    {
-        path: "/Dashboard",
-        element: <ErrorBoundary><ProcessPlanner /></ErrorBoundary>,
+        element: <ErrorBoundary><CustomLayout><Outlet /></CustomLayout></ErrorBoundary>,
+        children: [
+            {
+                path: "",
+                element: <Home />,
+            },
+            {
+                path: "ProcessPlanner",
+                element: <ProcessPlanner />,
+            },
+        ]
     },
 ]);
 

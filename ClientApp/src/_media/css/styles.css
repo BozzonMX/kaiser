@@ -19,18 +19,6 @@ body,
     overflow-y: hidden;
 }
 
-input:-webkit-autofill {
-    -webkit-box-shadow: 0 0 0 50px white inset !important;
-    -webkit-text-fill-color: rgba(0, 0, 0, 0.85) !important;
-    box-shadow: 0 0 0 50px white inset !important;
-}
-
-input:-webkit-autofill:focus {
-    -webkit-box-shadow: 0 0 0 50px white inset !important;
-    -webkit-text-fill-color: rgba(0, 0, 0, 0.85) !important;
-    box-shadow: 0 0 0 50px white inset !important;
-}
-
 /*CSS COMUN*/
 /*LAYOUT*/
 
@@ -74,13 +62,13 @@ input:-webkit-autofill:focus {
     border-left: 2px solid #292929;
 }
 
-.side-nav-logo-div {
+.side-nav-header-div {
     height: 56px;
     border-bottom: 1.5px solid #5d5d5d;
 }
 
 .side-nav-inner {
-    height: calc(100% - 112px);
+    height: calc(100% - 60px);
     padding: 0.25rem 0 0.25rem;
     position: relative;
     margin: 0;
@@ -190,7 +178,8 @@ input:-webkit-autofill:focus {
 }
 
 .side-nav-item svg {
-    margin-left: -0.35rem;
+    width: 25px;
+    margin-left: -0.65rem;
     -ms-flex-positive: 0;
     flex-grow: 0;
     -ms-flex-negative: 0;
@@ -229,13 +218,17 @@ input:-webkit-autofill:focus {
     margin-left: 1.5rem;
     background: none;
     display: block;
-    height: 0;
+    max-height: 0;
     overflow: hidden;
     transition: background-color 0.2s;
     -ms-flex-direction: column;
     flex-direction: column;
     padding: 0;
-    transition: height 300ms ease-in-out;
+    transition: max-height 500ms ease-in-out;
+}
+
+.side-nav-toggle.open~.side-nav-menu {
+    max-height: 750px;
 }
 
 .side-nav div {
@@ -245,44 +238,12 @@ input:-webkit-autofill:focus {
 .side-nav-menu::after {
     content: "";
     height: 100%;
-    border-left: 2px solid #3c3c3c;
+    border-left: 2px solid #3c3c3c !important;
     width: 1px;
     position: absolute;
     left: 9px;
     top: 0px;
     transition: 0.2s border-left;
-}
-
-.side-nav-toggle-sub+.side-nav-menu::after {
-    content: none !important;
-}
-
-.side-nav-toggle-sub+.side-nav-menu>.side-nav-item {
-    width: 12.625rem;
-}
-
-.side-nav-toggle-sub::after {
-    right: 2.5rem;
-    transition-duration: 0.2s;
-    transition-property: -webkit-transform, transform;
-    color: #838790 !important;
-    content: "";
-    position: absolute;
-    top: 50%;
-    display: block;
-    width: 0.45em;
-    height: 0.45em;
-    border: 1px solid;
-    border-top: 0;
-    border-right: 0;
-    -webkit-transform: translateY(-50%) rotate(45deg);
-    transform: translateY(-50%) rotate(45deg);
-}
-
-.body-lateral-menu {
-    width: 100%;
-    flex-grow: 0;
-    overflow: hidden;
 }
 
 nav.navbar {
@@ -301,7 +262,7 @@ nav.navbar {
     box-shadow: 0px 3px 25px -2px rgba(0, 0, 0, 0.73);
 }
 
-.btnOpenNav {
+.btn-open-nav {
     background-color: #292929;
     font-size: 28px !important;
     border: 2px solid #ffffff;
@@ -317,11 +278,11 @@ nav.navbar {
     display: none;
 }
 
-.btnOpenNav svg {
+.btn-open-nav svg {
     margin-top: 8px;
 }
 
-.btnCloseNav {
+.btn-close-nav {
     background-color: #ffffff;
     font-size: 28px;
     border: 2px solid #4b4b49;
@@ -334,24 +295,19 @@ nav.navbar {
     display: none;
 }
 
-.btnCloseNav svg {
+.btn-close-nav svg {
     margin-top: 8px;
 }
 
-.btnNavUl {
+.btn-nav-li {
     position: absolute;
     z-index: 1;
     left: -35px;
 }
 
-.pageTitle {
+.page-title {
     text-align: center;
     font-size: 30px;
-}
-
-.pageDivider {
-    transition: margin-bottom linear 0.1s;
-    margin-bottom: 30px;
 }
 
 .main-page {
@@ -362,7 +318,7 @@ nav.navbar {
     height: 100%;
 }
 
-.upperPage {
+.upper-page {
     overflow-y: auto !important;
     height: calc(100% - 56px);
     background-color: #f5f5f5;
@@ -403,6 +359,10 @@ nav.navbar {
     text-align: right;
 }
 
+.bg-white{
+    background-color: #ffffff;
+}
+
 /*UTILIDADES*/
 /*NUEVOS DE ANTD*/
 
@@ -434,47 +394,47 @@ nav.navbar {
     padding-top: 24px !important;
 }
 
-.modalCustom .ant-modal-title,
-.modalCustom .ant-modal-close-x {
+.modal-custom .ant-modal-title,
+.modal-custom .ant-modal-close-x {
     font-weight: 600;
     color: #292929 !important;
 }
 
-.modalCustom .ant-modal-header {
+.modal-custom .ant-modal-header {
     border-bottom: 1px solid #939393;
     padding-bottom: 15px;
 }
 
-.modalCustom .ant-modal-body {
+.modal-custom .ant-modal-body {
     padding: 15px 0px 0px;
 }
 
-.modalCustom .ant-modal-footer {
+.modal-custom .ant-modal-footer {
     border-top: 1px solid #939393;
     padding-top: 15px;
 }
 
-.modalCustom .ant-modal-footer button {
+.modal-custom .ant-modal-footer button {
     text-transform: uppercase;
 }
 
-.modalCustom.hideFooter .ant-modal-footer {
+.modal-custom.hide-footer .ant-modal-footer {
     display: none;
 }
 
 /* FILE FORM */
 
-.fileForm button,
-.fileForm .ant-upload {
+.file-form button,
+.file-form .ant-upload {
     width: 100%;
 }
 
-.fileForm .descripcionFile {
+.file-form .descripcion-file {
     display: block;
     margin-top: 9px;
 }
 
-.fileForm>div:last-of-type {
+.file-form>div:last-of-type {
     margin-bottom: 0px;
 }
 
@@ -704,10 +664,6 @@ span {
         left: unset;
     }
 
-    .side-nav.open .side-nav-menu::after {
-        border-left: 2px solid #292929;
-    }
-
     .side-nav+.main-page {
         padding-left: 0rem;
     }
@@ -716,17 +672,14 @@ span {
         padding-left: 0;
     }
 
-    .btnCloseNav,
-    .btnOpenNav {
+    .btn-close-nav,
+    .btn-open-nav {
         display: block;
     }
 }
 
-@media only screen and (max-width: 992px) {
-}
-
 @media only screen and (max-width: 767px) {
-    .upperPage>section>.ant-layout-has-sider {
+    .upper-page>section>.ant-layout-has-sider {
         flex-direction: column-reverse !important;
     }
 

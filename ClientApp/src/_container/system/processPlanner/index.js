@@ -8,7 +8,7 @@ class ProcessPlanner extends Component {
     };
 
     render() {
-        return (<h1>Process</h1>);
+        return (<h1 className="page-title">Planeación de procesos</h1>);
     };
 };
 

@@ -1,15 +1,14 @@
 import React, { useState } from "react";
 import { Button, Input, Form, Row, Col, Divider, Upload, Switch, InputNumber } from "antd";
 import { CheckOutlined, CloseOutlined, PercentageOutlined, UploadOutlined } from "@ant-design/icons";
-import { Alert, AlertType, GenerateRandomString } from "../../_utility";
+import { Alert, AlertType } from "../../_utility";
 
-export const InputForm = ({ sm = 12, md = 12, lg = 6, label, placeholder = null, name, normalize = null, required = false, disabled = false, maxLength = 50, autoComplete = false, size = "middle", email, phone, numbers, onChange = null }) => {
+export const InputForm = ({ sm = 12, md = 12, lg = 6, label, placeholder = null, name, normalize = null, required = false, disabled = false, maxLength = 50, size = "middle", email, phone, numbers, onChange = null }) => {
     const type = (email ? "email" : "string"), pattern = (phone ? new RegExp(/^([0-9]+-)*[0-9]+$/) : numbers ? new RegExp("^[0-9]*$") : null);
-    if (autoComplete === false) autoComplete = GenerateRandomString(10);
     return (<Col xs={24} sm={sm} md={md} lg={lg}>
         <Form.Item label={label ? `${label.toUpperCase()}:` : null} name={name} normalize={normalize}
             rules={[{ type, required, whitespace: true, pattern }]}>
-            <Input placeholder={placeholder} size={size} disabled={disabled} maxLength={maxLength} autoComplete={autoComplete} onChange={onChange} />
+            <Input placeholder={placeholder} size={size} disabled={disabled} maxLength={maxLength} onChange={onChange} />
         </Form.Item>
     </Col>);
 };
@@ -33,7 +32,7 @@ export const SwitchForm = ({ sm = 12, md = 12, lg = 6, label, name, disabled = f
 export const FileUpload = ({ disabled, descripcion, name, label, sm = 6, md = 6, lg = 6, limit, required = false, accept = [], form = null, setFile = null }) => {
     const [fileList, setFileList] = useState([]);
 
-    return (<Col xs={24} sm={sm} md={md} lg={lg} className="fileForm">
+    return (<Col xs={24} sm={sm} md={md} lg={lg} className="file-form">
         <Form.Item name={name} label="file" hidden={true}>
             <Input />
         </Form.Item>
@@ -58,7 +57,7 @@ export const FileUpload = ({ disabled, descripcion, name, label, sm = 6, md = 6,
                         }
                     }}>
                     <Button icon={<UploadOutlined />}>SUBIR</Button>
-                    {fileList.length === 0 && descripcion && <span className="descripcionFile">Archivo cargado: {descripcion}</span>}
+                    {fileList.length === 0 && descripcion && <span className="descripcion-file">Archivo cargado: {descripcion}</span>}
                 </Upload>
             </Form.Item>
         </Form.Item>
