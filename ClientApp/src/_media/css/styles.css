@@ -307,7 +307,8 @@ nav.navbar {
 
 .page-title {
     text-align: center;
-    font-size: 30px;
+    font-size: 45px;
+    margin: 0;
 }
 
 .main-page {
@@ -359,7 +360,7 @@ nav.navbar {
     text-align: right;
 }
 
-.bg-white{
+.bg-white {
     background-color: #ffffff;
 }
 
@@ -686,6 +687,14 @@ span {
     .page .ant-layout-has-sider {
         flex-wrap: wrap;
         flex-direction: column-reverse;
+    }
+
+    .text-center-md {
+        text-align: center !important;
+    }
+
+    .mb-md-5 {
+        margin-bottom: 25px;
     }
 }
 
