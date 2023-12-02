@@ -1,5 +1,5 @@
 using Microsoft.AspNetCore.HttpOverrides;
-using Kaiser.Middlewares;
+using Kaiser.Middleware;
 
 // BUILDER
 var builder = WebApplication.CreateBuilder(args);

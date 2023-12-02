@@ -1,6 +1,6 @@
 ﻿using Newtonsoft.Json;
 
-namespace Kaiser.Middlewares
+namespace Kaiser.Middleware
 {
     public class ExceptionMiddleware
     {

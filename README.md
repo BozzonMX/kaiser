@@ -2,7 +2,7 @@
 
 This project it's open-source, feel free to fork it, edit it and distribute it.
 
-**Developed for:** Facultad de Ingenieria, UNAM.
+**Developed for:** Facultad de Ingeniería, UNAM.
 
 **Developed by:** Carlos Alberto Miranda Serrano. 
 

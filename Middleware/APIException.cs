@@ -1,4 +1,4 @@
-﻿namespace Kaiser.Middlewares
+﻿namespace Kaiser.Middleware
 {
     public class APIException : Exception
     {
