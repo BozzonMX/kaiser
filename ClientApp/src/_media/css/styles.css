@@ -220,15 +220,12 @@ body,
     display: block;
     max-height: 0;
     overflow: hidden;
-    transition: background-color 0.2s;
-    -ms-flex-direction: column;
-    flex-direction: column;
     padding: 0;
-    transition: max-height 500ms ease-in-out;
+    transition: max-height .35s ease-in-out;
 }
 
 .side-nav-toggle.open~.side-nav-menu {
-    max-height: 750px;
+    max-height: 450px;
 }
 
 .side-nav div {
@@ -307,7 +304,17 @@ nav.navbar {
 
 .page-title {
     text-align: center;
-    font-size: 30px;
+    font-size: 45px;
+    margin: 0;
+    border-bottom: 1px solid #000000 !important;
+    margin-bottom: 35px !important;
+}
+
+.page-subtitle {
+    text-align: center;
+    font-size: 25px;
+    margin: 0;
+    border-bottom: 1px solid #000000 !important;
 }
 
 .main-page {
@@ -359,8 +366,12 @@ nav.navbar {
     text-align: right;
 }
 
-.bg-white{
+.bg-white {
     background-color: #ffffff;
+}
+
+.mt-5 {
+    margin-top: 35px;
 }
 
 /*UTILIDADES*/
@@ -535,9 +546,50 @@ nav.navbar {
 
 /* OTROS */
 
+.table-center th,
+.table-center td {
+    text-align: center !important;
+}
+
 .ant-divider-horizontal.ant-divider-with-text::before,
 .ant-divider-horizontal.ant-divider-with-text::after {
     border-top-color: #939393 !important;
+}
+
+.process-list {
+    padding-left: 0px !important;
+    white-space: nowrap;
+    overflow-x: scroll;
+    padding-bottom: 10px;
+}
+
+.process-list ul {
+    display: inline-block;
+    white-space: normal;
+    vertical-align: top;
+    text-align: center !important;
+    background-color: #414141;
+    color: #ffffff;
+    font-weight: 600;
+    padding: 10px 10px !important;
+    border-radius: 5px;
+    margin-left: 15px;
+}
+
+.process-list ul:first-of-type {
+    margin-left: 0px !important;
+}
+
+.info-float-button {
+    width: 75px;
+    height: 75px;
+    right: 30px;
+    bottom: 30px;
+}
+
+.info-float-button .ant-float-btn-icon {
+    width: 32px !important;
+    font-size: 32px !important;
 }
 
 /* FIXES */
@@ -686,6 +738,14 @@ span {
     .page .ant-layout-has-sider {
         flex-wrap: wrap;
         flex-direction: column-reverse;
+    }
+
+    .text-center-md {
+        text-align: center !important;
+    }
+
+    .mb-md-5 {
+        margin-bottom: 25px;
     }
 }
 
