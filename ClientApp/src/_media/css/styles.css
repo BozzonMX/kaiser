@@ -361,6 +361,10 @@ nav.navbar {
     background-color: #ffffff;
 }
 
+.mt-5 {
+    margin-top: 35px;
+}
+
 /*UTILIDADES*/
 /*NUEVOS DE ANTD*/
 
@@ -533,9 +537,38 @@ nav.navbar {
 
 /* OTROS */
 
+.table-center th,
+.table-center td {
+    text-align: center !important;
+}
+
 .ant-divider-horizontal.ant-divider-with-text::before,
 .ant-divider-horizontal.ant-divider-with-text::after {
     border-top-color: #939393 !important;
+}
+
+.process-list {
+    padding-left: 0px !important;
+    white-space: nowrap;
+    overflow-x: scroll;
+    padding-bottom: 10px;
+}
+
+.process-list ul {
+    display: inline-block;
+    white-space: normal;
+    vertical-align: top;
+    text-align: center !important;
+    background-color: #414141;
+    color: #ffffff;
+    font-weight: 600;
+    padding: 10px 10px !important;
+    border-radius: 5px;
+    margin-left: 15px;
+}
+
+.process-list ul:first-of-type {
+    margin-left: 0px !important;
 }
 
 /* FIXES */

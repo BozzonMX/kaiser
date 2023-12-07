@@ -1,7 +1,7 @@
 import React from "react";
 import axios from "axios";
 import dayjs from "dayjs";
-import { notification, Empty, Modal } from "antd";
+import { notification, Modal } from "antd";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 
 export const MethodType =
@@ -32,10 +32,6 @@ export const ServerCall = async ({ method, url, data = null, success = null, err
 
 export const EncodeParams = (params) => {
     return Object.entries(params).map((e) => e.map(encodeURIComponent).join("=")).join("&");
-};
-
-export const RenderEmpty = (text = "SIN DATOS PARA MOSTRAR") => {
-    return (<Empty description={text} />);
 };
 
 export const ModalConfirm = ({ title = "", content = "", afterClose = null }) => {
