@@ -306,6 +306,15 @@ nav.navbar {
     text-align: center;
     font-size: 45px;
     margin: 0;
+    border-bottom: 1px solid #000000 !important;
+    margin-bottom: 35px !important;
+}
+
+.page-subtitle {
+    text-align: center;
+    font-size: 25px;
+    margin: 0;
+    border-bottom: 1px solid #000000 !important;
 }
 
 .main-page {
@@ -569,6 +578,18 @@ nav.navbar {
 
 .process-list ul:first-of-type {
     margin-left: 0px !important;
+}
+
+.info-float-button {
+    width: 75px;
+    height: 75px;
+    right: 30px;
+    bottom: 30px;
+}
+
+.info-float-button .ant-float-btn-icon {
+    width: 32px !important;
+    font-size: 32px !important;
 }
 
 /* FIXES */

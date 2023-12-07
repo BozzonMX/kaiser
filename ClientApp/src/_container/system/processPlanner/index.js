@@ -5,6 +5,7 @@ import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { cloneDeep, reject, orderBy, sortBy } from "lodash";
 import { Alert, AlertType } from "../../../_utility";
 import { PROCESS_TABLE } from "../../../_constant";
+import InfoModal from "./components/modal";
 
 class ProcessPlanner extends Component {
 
@@ -60,6 +61,21 @@ class ProcessPlanner extends Component {
                     }
                     total = total - 1;
                 }
+                let indexRepeat = null, ticks = 0;
+                for (let i = 0; i < planner.length; i++) {
+                    if (i !== 0 && planner[i].process === planner[i - 1].process) {
+                        if (indexRepeat === null) ticks = planner[i - 1].tick + planner[i].tick;
+                        else ticks = ticks + planner[i].tick;
+                        if (indexRepeat === null) indexRepeat = i - 1;
+                    }
+                }
+                if (indexRepeat !== null) {
+                    planner[indexRepeat] = {
+                        process: planner[indexRepeat].process,
+                        tick: ticks,
+                    }
+                    planner = planner.slice(0, indexRepeat + 1);
+                }
             }
             this.setState({ planner });
         },
@@ -110,7 +126,7 @@ class ProcessPlanner extends Component {
         return (<>
             <Row gutter={16}>
                 <Col xs={24}>
-                    <h1 className="page-title">Planeación de procesos</h1>
+                    <h1 className="page-title no-select">Planeación de procesos</h1>
                 </Col>
             </Row>
             <Row gutter={16}>
@@ -123,9 +139,9 @@ class ProcessPlanner extends Component {
                     ]} block onChange={changeAlorithm} />
                 </Col>
             </Row>
-            <Row gutter={16} justify="center mt-5">
-                <Col xs={24} md={12}>
-                    <Table bordered className="table-center" size="small" pagination={false}
+            <Row gutter={16} justify="center mt-5 no-select">
+                <Col xs={24} md={18}>
+                    <Table bordered className="table-center" size="small" pagination={false} scroll={{ x: 400 }}
                         dataSource={process} columns={PROCESS_TABLE(modifyTick, modifyPriority, deleteRow)} rowKey="process"
                         footer={() => <>
                             <Button type="default" icon={<PlusOutlined />} size="large" block onClick={addRow}>
@@ -137,8 +153,7 @@ class ProcessPlanner extends Component {
             </Row>
             <Row gutter={16} className="mt-5">
                 <Col xs={24}>
-                    <h1 className="page-title no-select">TIMELINE</h1>
-                    <hr />
+                    <h1 className="page-subtitle no-select">TIMELINE</h1>
                 </Col>
             </Row>
             <Row gutter={16}>
@@ -148,7 +163,8 @@ class ProcessPlanner extends Component {
                     </ul>
                 </Col>
             </Row>
-            <FloatButton icon={<QuestionCircleOutlined />} type="primary" style={{ right: 24 }} onClick={openHelp} />
+            <InfoModal showModal={showModal} closeModal={closeHelp} />
+            <FloatButton icon={<QuestionCircleOutlined />} className="info-float-button" onClick={openHelp} />
         </>);
     };
 };
